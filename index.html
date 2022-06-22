@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Template</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/bcc179654f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav class="flex align-center header justify-end">
+        <div>
+            <p>Cody Simmons</p>
+        </div>
+
+        <div>
+            <img src="./avatar.png" alt="" width="50">
+            <svg id="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg>
+        </div>
+    </nav>
+
+    <aside>
+        <div id="logo" width="100px" height="100px"></div>
+        <div class="flex direction-column align-center">
+            <div class="sqr">
+                <i class="fa-solid fa-gauge"></i>
+            </div>
+            <div class="sqr">
+                <i class="fa-solid fa-gauge"></i>
+            </div>
+            <div class="sqr">
+                <i class="fa-solid fa-gauge"></i>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="flex space-between">
+            <h1>Dashboard</h1>
+            <button id="bttn1" onclick="popup()"><div class="flex align-center"><div id="margin"><i class="fa-solid fa-plus"></i></div><div>Adicionar nova <br>entrada ou saída</div></div></button>
+        </div>
+
+    <div id="entradas-e-saidas">
+        <select name="select" id="op">
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+        </select>
+        <p>Título:</p>
+        <select id="titulo-saida">
+            <option value="Assinaturas">Assinaturas e serviços</option>
+            <option value="Casa">Casa</option>
+            <option value="Compras">Compras</option>
+            <option value="Dívidas">Dívidas e empréstimos</option>
+            <option value="Educação">Educação</option>
+            <option value="Família">Família e filhos</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Mercado">Mercado</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Investimento">Investimento</option>
+            <option value="Impostos">Impostos</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <p>Valor:</p>
+        <input type="number" id="saida"><br><br>
+        <button onclick="registrar()">Confirmar</button>
+    </div>
+
+        <div id="inputs" class="flex">
+            <div class="cards">
+                <div class="icone">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                </div>
+                <div>
+                    <p><b>Entradas</b></p>
+                    <p id="entradas-totais">
+                        
+                    </p>
+                </div>
+            </div>
+    
+            <div class="cards">
+                <div class="icone">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                </div>
+                <div>
+                    <p><b>Saídas</b></p>
+                    <p id="despesas-totais">
+                        
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cards">
+                <div class="icone">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <div>
+                    <p><b>Saldo</b></p>
+                    <p id="saldo-total">
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div id="dados" class="flex space-between">
+            <div class="saidas-hist">
+                <table id="tabela-despesas">
+        
+                </table>
+            </div>
+    
+            <div id="graph" class="flex direction-column align-center">
+                <canvas id="myChart" width="250" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/0b76ad9e3b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
